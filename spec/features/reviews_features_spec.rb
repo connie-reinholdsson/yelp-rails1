@@ -4,8 +4,10 @@ feature 'reviewing' do
   before { Restaurant.create name: 'Avocado in Paradise'}
 
   scenario 'allows users to leave a review using a form' do
-    visit '/restaurants'
-    click_link 'Review Avocado in Paradise'
+    sign_up
+    create_restaurant
+    visit root_path
+    click_link 'Review Silky Salmon'
     fill_in "Thoughts", with: "AMAZIIIIIING"
     select '5', from: 'Rating'
     click_button 'Leave Review'

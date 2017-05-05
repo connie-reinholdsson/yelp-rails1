@@ -8,9 +8,9 @@ describe Restaurant, type: :model do
   end
 
   it 'is not valid unless it has a unique name' do
-    Restaurant.create(name: 'Squid Shack')
-    restaurant = Restaurant.new(name: 'Squid Shack')
+    user = User.create(email: 'dog@dog.com', password: 'password123')
+    user.restaurants.create(name: 'Silky Salmon')
+    restaurant = user.restaurants.new(name: 'Silky Salmon')
     expect(restaurant).to have(1).error_on(:name)
   end
-
 end
