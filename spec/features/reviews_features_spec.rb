@@ -10,7 +10,7 @@ feature 'reviewing' do
     click_link 'Review Silky Salmon'
     fill_in "Thoughts", with: "AMAZIIIIIING"
     select '5', from: 'Rating'
-    click_button 'Leave Review'
+    click_button 'Post comment'
 
     expect(current_path).to eq '/restaurants'
     click_link 'All reviews'
